@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/09/20 15:14:01 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:17:42 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,25 @@
 # include <stdio.h>
 # include <limits.h>
 
-//parse.c
+
+typedef struct s_list
+{
+	int				*nbr;
+	struct s_list	*next;
+	struct s_list	*prev;
+	
+}					t_list;
 
 long	ft_atoi(const char *nptr);
 
-int	parsing(char **args, int count);
+//parse.cs
 
-int	argcheck(char *arg);
+int		parsing(char **args, int count);
+
+int		check_dups(char **args, int nbr);
+
+int		check_range(char **args);
+
+int		check_number(char **args);
 
 #endif

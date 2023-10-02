@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 16:13:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/10/02 16:13:11 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/20 16:40:25 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/22 12:23:33 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list stack_a;
+	t_list	*last;
 
-	if (parsing(argv, argc))
-		printf("Mistake\n");
-	else
-		printf("All good\n");
-	return (0);
+	last = ft_lstlast(*lst);
+	if (!lst || !new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	last->next = new;
 }
