@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 16:34:11 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/10/25 16:10:28 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/08 15:58:36 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/08 17:37:33 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char *nptr)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		i;
-	size_t		sign;
-	long		nbr;
+	int		i;
+	int		j;
 
-	nbr = 0;
 	i = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+	if (!s1 || !set)
+		return (NULL);
+	j = ft_strlen(s1);
+	while (ft_strchr(set, s1[i]) && s1[i])
 		i++;
-	if (nptr[i] == 45)
-	{
-		sign = -1;
-		i++;
-	}
-	while ((nptr[i] >= 48 && nptr[i] <= 57))
-	{
-		nbr = (10 * nbr) + (nptr[i] - 48);
-		i++;
-	}
-	return (nbr * sign);
+	while (ft_strchr(set, s1[j]) && j >= i)
+		j--;
+	return (ft_substr(s1, i, (j - i + 1)));
 }

@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 16:34:11 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/10/25 16:10:28 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/10/26 16:31:38 by mbraga-s          #+#    #+#             */
+/*   Updated: 2022/11/03 17:27:22 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_atoi(const char *nptr)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t		i;
-	size_t		sign;
-	long		nbr;
+	size_t	i;
+	char	*ptr;
 
-	nbr = 0;
-	i = 0;
-	sign = 1;
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
-	if (nptr[i] == 45)
+	ptr = (char *)s;
+	i = ft_strlen(ptr) + 1;
+	while (i--)
 	{
-		sign = -1;
-		i++;
+		if (*(ptr + i) == (char)c)
+			return (ptr + i);
 	}
-	while ((nptr[i] >= 48 && nptr[i] <= 57))
-	{
-		nbr = (10 * nbr) + (nptr[i] - 48);
-		i++;
-	}
-	return (nbr * sign);
+	return (0);
 }
+
+/*int	main(void)
+{
+	const char	*ptr;
+	char		*str;
+	int			c;
+
+	c = 'i';
+	ptr = "Isto e muito fixe moco";
+	str = ft_strrchr(ptr, c);
+
+	printf("%s", str);
+}
+*/
