@@ -6,11 +6,11 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 16:34:11 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/10/25 16:10:28 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:17:16 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pushswap.h"
 
 long	ft_atoi(const char *nptr)
 {

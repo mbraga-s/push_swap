@@ -1,30 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 17:51:54 by mbraga-s          #+#    #+#             */
-/*   Updated: 2022/11/08 18:14:59 by mbraga-s         ###   ########.fr       */
+/*   Created: 2023/10/31 15:19:59 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/10/31 16:13:06 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "pushswap.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ra(t_list **a)
 {
-	size_t	i;
-	char	*ptr;
+	rotate(a);
+	ft_putstr_fd("ra\n", 1);
+}
 
-	i = 0;
-	ptr = ft_strdup(s);
-	if (!ptr)
-		return (NULL);
-	while (ptr[i])
-	{
-		ptr[i] = f(i, ptr[i]);
-		i++;
-	}
-	return (ptr);
+void	rb(t_list **b)
+{
+	rotate(b);
+	ft_putstr_fd("ra\n", 1);
+}
+
+void	rotate(t_list **lst)
+{
+	t_list	*temp;
+	t_list	*last;
+
+	if (!(*lst) || !(*lst)->next)
+		return ;
+	temp = *lst;
+	*lst = *temp->next;
+	last = ft_lstlast(*lst);
+	last->next = temp;
+	temp->next = NULL;
 }

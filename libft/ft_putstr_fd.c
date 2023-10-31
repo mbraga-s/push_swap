@@ -6,11 +6,11 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 18:36:14 by mbraga-s          #+#    #+#             */
-/*   Updated: 2022/11/10 09:55:42 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:16:31 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../pushswap.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
