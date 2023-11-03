@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 14:15:27 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 18:22:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/04 17:17:12 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/11/03 18:21:27 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-t_list	*ft_lstnew(int n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_list	*ptr;
+	void	*ptr;
 
-	ptr = ft_calloc(1, sizeof(t_list));
+	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	ptr->nbr = n;
-	ptr->next = NULL;
+	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }

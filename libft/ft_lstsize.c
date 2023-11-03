@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 14:15:27 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 18:22:44 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/20 16:20:19 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/11/03 17:23:02 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-t_list	*ft_lstnew(int n)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*ptr;
+	int	count;
 
-	ptr = ft_calloc(1, sizeof(t_list));
-	if (!ptr)
-		return (NULL);
-	ptr->nbr = n;
-	ptr->next = NULL;
-	return (ptr);
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }

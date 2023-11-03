@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 17:18:49 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/03 18:49:38 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+//utils
+
+void	make_list(t_list **a, int argc, char **argv);
+
 //libft
 
 long	ft_atoi(const char *nptr);
@@ -34,12 +38,17 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
-void	ft_putstr_fd(char *s, int fd);
-
 t_list	*ft_lstnew(int n);
 
 t_list	*ft_lstlast(t_list *lst);
 
+int		ft_lstsize(t_list *lst);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	*ft_calloc(size_t nmemb, size_t size);
+
+void	ft_bzero(void *s, size_t n);
 
 //moves
 
@@ -47,7 +56,7 @@ void	rotate(t_list **lst);
 
 void	rrotate(t_list **lst);
 
-void	push(t_list **dest, t_list **src);
+void	push(t_list **dst, t_list **src);
 
 void	swap(t_list **lst);
 

@@ -6,7 +6,7 @@
 #    By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/26 18:27:44 by mbraga-s          #+#    #+#              #
-#    Updated: 2023/11/03 12:03:22 by mbraga-s         ###   ########.fr        #
+#    Updated: 2023/11/03 17:22:50 by mbraga-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 NAME = libft.a
 
 #Function names (sources)
-SRCS = ft_atoi ft_putstr_fd ft_lstnew ft_lstadd_back ft_lstlast\
+SRCS = ft_atoi ft_putstr_fd \
+ft_lstnew ft_lstadd_front ft_lstadd_back ft_lstlast ft_lstsize\
 
 #Compiler and standard flags
 CC = cc

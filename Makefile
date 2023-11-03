@@ -6,13 +6,17 @@
 #    By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:57:57 by mbraga-s          #+#    #+#              #
-#    Updated: 2023/10/25 16:15:48 by mbraga-s         ###   ########.fr        #
+#    Updated: 2023/11/03 18:35:25 by mbraga-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = parse utils main
+SRCS = parse utils main \
+./moves/push ./moves/rotate ./moves/rrotate ./moves/swap \
+./libft/ft_atoi ./libft/ft_bzero ./libft/ft_calloc ./libft/ft_lstadd_back \
+./libft/ft_lstadd_front ./libft/ft_lstlast ./libft/ft_lstnew ./libft/ft_lstsize \
+./libft/ft_putstr_fd
 
 LIB = $(NAME).a
 

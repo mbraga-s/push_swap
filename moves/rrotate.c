@@ -6,11 +6,11 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 12:37:18 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 16:48:58 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/03 19:03:08 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	rra(t_list **a)
 {
@@ -36,8 +36,8 @@ void	rrotate(t_list **lst)
 	t_list	*temp;
 	t_list	*last;
 
-	if (!lst || !(*lst) || !(*lst)->next)
-		return;
+	if (!(*lst) || !(*lst)->next)
+		return ;
 	last = ft_lstlast(*lst);
 	last->next = *lst;
 	temp = *lst;
