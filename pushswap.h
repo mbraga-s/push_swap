@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 18:49:38 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/03 19:12:36 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }				t_list;
+
+//sort
+
+void	sort_2(t_list **a);
+
+void	sort_3(t_list **a);
 
 //utils
 

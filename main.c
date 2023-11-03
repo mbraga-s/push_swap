@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:13:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 19:01:52 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/03 19:12:04 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,29 +48,7 @@ int	main(int argc, char **argv)
 		make_list(&stack_a, argc, argv);
 		print_list(stack_a, stack_b);
 		printf("\n");
-		ra(&stack_a);
-		printf("\n");
-		print_list(stack_a, stack_b);
-		printf("\n");
-		pb(&stack_a, &stack_b);
-		pb(&stack_a, &stack_b);
-		printf("\n");
-		print_list(stack_a, stack_b);
-		printf("\n");
-		sb(&stack_b);
-		printf("\n");
-		print_list(stack_a, stack_b);
-		printf("\n");
-		sa(&stack_a);
-		printf("\n");
-		print_list(stack_a, stack_b);
-		printf("\n");
-		pa(&stack_a, &stack_b);
-		printf("\n");
-		print_list(stack_a, stack_b);
-		printf("\n");
-		rra(&stack_a);
-		printf("\n");
+		sort_3(&stack_a);
 		print_list(stack_a, stack_b);
 		return (0);
 	}
