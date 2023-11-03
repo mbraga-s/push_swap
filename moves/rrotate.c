@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   rrotate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 17:10:51 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 17:17:47 by mbraga-s         ###   ########.fr       */
+/*   Created: 2023/11/03 12:37:18 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/11/03 16:48:58 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	sa(t_list **a)
+void	rra(t_list **a)
 {
-	swap(a);
-	ft_putstr_fd("sa\n", 1);
+	rrotate(a);
+	ft_putstr_fd("rra\n", 1);
 }
 
-void	sb(t_list **b)
+void	rrb(t_list **b)
 {
-	swap(b);
-	ft_putstr_fd("sb\n", 1);
+	rrotate(b);
+	ft_putstr_fd("rrb\n", 1);
 }
 
-void	ss(t_list **a, t_list **b)
+void	rrr(t_list **a, t_list **b)
 {
-	swap(a);
-	swap(b);
-	ft_putstr_fd("ss\n", 1);
+	rrotate(a);
+	rrotate(b);
+	ft_putstr_fd("rrr\n", 1);
 }
 
-void	swap(t_list **lst)
+void	rrotate(t_list **lst)
 {
 	t_list	*temp;
+	t_list	*last;
 
 	if (!lst || !(*lst) || !(*lst)->next)
-		return ;
+		return;
+	last = ft_lstlast(*lst);
+	last->next = *lst;
 	temp = *lst;
-	*lst = (*lst)->next;
-	(*lst)->next = temp;
+	while (temp->next != last)
+		temp = temp->next;
+	temp->next = NULL;
+	*lst = last;
 }

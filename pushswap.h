@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/10/31 16:20:39 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/03 17:18:49 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,17 @@
 typedef struct s_list
 {
 	int				nbr;
+	int				index;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
 //libft
 
 long	ft_atoi(const char *nptr);
 
 void	ft_lstadd_back(t_list **lst, t_list *new);
+
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 void	ft_putstr_fd(char *s, int fd);
 
@@ -42,9 +45,33 @@ t_list	*ft_lstlast(t_list *lst);
 
 void	rotate(t_list **lst);
 
+void	rrotate(t_list **lst);
+
+void	push(t_list **dest, t_list **src);
+
+void	swap(t_list **lst);
+
+void	rra(t_list **a);
+
+void	rrb(t_list **b);
+
+void	rrr(t_list **a, t_list **b);
+
 void	ra(t_list **a);
 
 void	rb(t_list **b);
+
+void	rr(t_list **a, t_list **b);
+
+void	pa(t_list **a, t_list **b);
+
+void	pb(t_list **a, t_list **b);
+
+void	sa(t_list **a);
+
+void	sb(t_list **b);
+
+void	ss(t_list **a, t_list **b);
 
 //parse.c
 

@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 17:10:51 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 17:17:47 by mbraga-s         ###   ########.fr       */
+/*   Created: 2022/11/20 15:59:18 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/11/03 16:54:40 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
-void	sa(t_list **a)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	swap(a);
-	ft_putstr_fd("sa\n", 1);
-}
-
-void	sb(t_list **b)
-{
-	swap(b);
-	ft_putstr_fd("sb\n", 1);
-}
-
-void	ss(t_list **a, t_list **b)
-{
-	swap(a);
-	swap(b);
-	ft_putstr_fd("ss\n", 1);
-}
-
-void	swap(t_list **lst)
-{
-	t_list	*temp;
-
-	if (!lst || !(*lst) || !(*lst)->next)
+	if (!lst || !new)
 		return ;
-	temp = *lst;
-	*lst = (*lst)->next;
-	(*lst)->next = temp;
+	if (*lst != NULL)
+		new->next = *lst;
+	*lst = new;
 }
