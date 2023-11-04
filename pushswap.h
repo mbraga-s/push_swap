@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 19:19:37 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:27:22 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	sort_2(t_list **a);
 void	sort_3(t_list **a);
 
 void	sort_4(t_list **a, t_list **b);
+
+void	sort_5(t_list **a, t_list **b);
 
 //utils
 

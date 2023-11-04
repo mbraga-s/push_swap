@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:13:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/03 19:18:14 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/04 15:25:49 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	print_list(t_list *stack_a, t_list *stack_b)
 {
+	printf("\n");
 	while (stack_a || stack_b)
 	{
 		if (stack_a)
@@ -33,6 +34,7 @@ void	print_list(t_list *stack_a, t_list *stack_b)
 			printf(" ");
 		printf("\n");
 	}
+	printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -44,11 +46,10 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (!parsing(argv, argc))
 	{
-		printf("Correct Input\n\n");
+		printf("Correct Input\n");
 		make_list(&stack_a, argc, argv);
 		print_list(stack_a, stack_b);
-		printf("\n");
-		sort_4(&stack_a, &stack_b);
+		sort_5(&stack_a, &stack_b);
 		print_list(stack_a, stack_b);
 		return (0);
 	}
