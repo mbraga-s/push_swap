@@ -1,47 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 16:28:34 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 18:00:59 by mbraga-s         ###   ########.fr       */
+/*   Created: 2023/11/05 18:01:02 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/11/05 18:44:33 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
-int	average(t_list **a)
+void	proto_sort(t_list **a, t_list **b)
 {
-	t_list	*tmp;
-	int		sum;
-	int		count;
-
-	tmp = *a;
-	sum = 0;
-	count = 0;
-	while (tmp)
+	while (ft_lstsize(*a) > 5)
 	{
-		sum = sum + tmp->nbr;
-		count++;
-		tmp = tmp->next;
+		if ((*a)->nbr < average(a))
+		{
+			printf("nbr = %d\n", (*a)->nbr);
+			printf("avg = %d\n", average(a));
+			pb(a, b);
+		}
+		else
+			ra(a);
 	}
-	return (sum / count);
-}
-
-int	check_sort(t_list **a)
-{
-	t_list	*temp;
-	int		flag;
-
-	flag = 1;
-	temp = *a;
-	while (temp->next)
-	{
-		if (temp->nbr > temp->next->nbr)
-			flag = 0;
-		temp = temp->next;
-	}
-	return (flag);
+	sort_5(a, b);
 }

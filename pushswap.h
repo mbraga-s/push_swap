@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/04 15:27:22 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/05 18:01:41 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,17 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-
 //debug
 
 void	print_list(t_list *stack_a, t_list *stack_b);
 
-//sort
+//main
+
+void	make_list(t_list **a, int argc, char **argv);
+
+void	free_list(t_list **lst);
+
+//sorts
 
 void	sort_2(t_list **a);
 
@@ -41,9 +46,15 @@ void	sort_4(t_list **a, t_list **b);
 
 void	sort_5(t_list **a, t_list **b);
 
+//algorithm
+
+void	proto_sort(t_list **a, t_list **b);
+
 //utils
 
-void	make_list(t_list **a, int argc, char **argv);
+int		average(t_list **a);
+
+int		check_sort(t_list **a);
 
 //libft
 

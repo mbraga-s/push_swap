@@ -1,67 +1,70 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/18 16:13:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 17:19:25 by mbraga-s         ###   ########.fr       */
+/*   Created: 2023/11/05 13:22:13 by mbraga-s          #+#    #+#             */
+/*   Updated: 2023/11/05 18:43:51 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	make_list(t_list **a, int argc, char **argv)
+void	print_list(t_list *stack_a, t_list *stack_b)
 {
-	int	i;
-
-	i = 1;
-	while (i < argc)
+	printf("\n");
+	while (stack_a || stack_b)
 	{
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
-		i++;
+		if (stack_a)
+		{
+			printf("%d", stack_a->nbr);
+			stack_a = stack_a->next;
+		}
+		else
+			printf(" ");
+		printf("  ||  ");
+		if (stack_b)
+		{
+			printf("%d", stack_b->nbr);
+			stack_b = stack_b->next;
+		}
+		else
+			printf(" ");
+		printf("\n");
 	}
+	printf("\n");
 }
 
-void	free_list(t_list **lst)
-{
-	t_list	*n_node;
+//Main for testing purposes
 
-	if (!lst || !*lst)
-		return ;
-	while ((*lst != NULL))
-	{
-		n_node = (*lst)->next;
-		free(*lst);
-		*lst = n_node;
-	}
-}
-
-/* int	main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (argc < 2)
-		return (0);
 	if (!parsing(argv, argc))
 	{
+		printf("Correct Input\n");
 		make_list(&stack_a, argc, argv);
+		print_list(stack_a, stack_b);
 		if (check_sort(&stack_a))
 		{
+			printf("List sorted\n");
 			free_list(&stack_a);
 			return (0);
 		}
-		sort_5(&stack_a, &stack_b);
+		proto_sort(&stack_a, &stack_b);
+		//sort_5(&stack_a, &stack_b);
+		print_list(stack_a, stack_b);
 		free_list(&stack_a);
 		free_list(&stack_b);
 		return (0);
 	}
 	else
-		printf("Error\n");
+		printf("Wrong Input\n");
 	return (0);
 }
- */
