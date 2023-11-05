@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:22:13 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 21:54:12 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/05 22:54:53 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	print_bff(t_list *stack_b)
 	{
 		printf("%d", stack_b->nbr);
 		printf("  ||  ");
-		printf("%d", stack_b->bff_index);
+		printf("%d", stack_b->cost);
 		stack_b = stack_b->next;
 		printf("\n");
 	}
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 		}
 		proto_sort(&stack_a, &stack_b);
 		print_list(stack_a, stack_b);
-		//print_bff(stack_b);
+		print_bff(stack_b);
 		free_list(&stack_a);
 		free_list(&stack_b);
 		return (0);
