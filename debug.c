@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:22:13 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 18:43:51 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/05 21:54:12 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,20 @@ void	print_list(t_list *stack_a, t_list *stack_b)
 	printf("\n");
 }
 
+void	print_bff(t_list *stack_b)
+{
+	printf("\n B || BFFs\n");
+	while (stack_b)
+	{
+		printf("%d", stack_b->nbr);
+		printf("  ||  ");
+		printf("%d", stack_b->bff_index);
+		stack_b = stack_b->next;
+		printf("\n");
+	}
+	printf("\n");
+}
+
 //Main for testing purposes
 
 int	main(int argc, char **argv)
@@ -50,7 +64,7 @@ int	main(int argc, char **argv)
 	{
 		printf("Correct Input\n");
 		make_list(&stack_a, argc, argv);
-		print_list(stack_a, stack_b);
+		//print_list(stack_a, stack_b);
 		if (check_sort(&stack_a))
 		{
 			printf("List sorted\n");
@@ -58,8 +72,8 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		proto_sort(&stack_a, &stack_b);
-		//sort_5(&stack_a, &stack_b);
 		print_list(stack_a, stack_b);
+		//print_bff(stack_b);
 		free_list(&stack_a);
 		free_list(&stack_b);
 		return (0);

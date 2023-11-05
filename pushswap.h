@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 18:01:41 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/05 22:28:25 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ typedef struct s_list
 {
 	int				nbr;
 	int				index;
+	int				bff_index;
+	int				cost;
 	struct s_list	*next;
 }				t_list;
 
 //debug
 
 void	print_list(t_list *stack_a, t_list *stack_b);
+
+void	print_bff(t_list *stack_b);
 
 //main
 
@@ -48,9 +52,13 @@ void	sort_5(t_list **a, t_list **b);
 
 //algorithm
 
+void	best_friend(t_list **a, t_list **b);
+
 void	proto_sort(t_list **a, t_list **b);
 
 //utils
+
+void	add_index(t_list **lst);
 
 int		average(t_list **a);
 
