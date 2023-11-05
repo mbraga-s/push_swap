@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 23:04:33 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/05 23:25:25 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	sort_3(t_list **a);
 void	sort_4(t_list **a, t_list **b);
 
 void	sort_5(t_list **a, t_list **b);
+
+void	repeated_moves(t_list **a, t_list **b);
 
 //algorithm
 

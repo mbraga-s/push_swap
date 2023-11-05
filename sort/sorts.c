@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:25:08 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 21:30:10 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/05 23:25:51 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,7 @@ void	sort_4(t_list **a, t_list **b)
 		sa(a);
 	}
 	else if ((*a)->next->nbr < (*b)->nbr && (*b)->nbr < (*a)->next->next->nbr)
-	{
-		ra(a);
-		ra(a);
-		pa(a, b);
-		rra(a);
-		rra(a);
-	}
+		repeated_moves(a, b);
 	else if ((*a)->next->next->nbr < (*b)->nbr)
 	{
 		pa(a, b);
@@ -64,14 +58,9 @@ void	sort_5(t_list **a, t_list **b)
 		sa(a);
 	}
 	else if ((*a)->next->nbr < (*b)->nbr && (*b)->nbr < (*a)->next->next->nbr)
-	{
-		ra(a);
-		ra(a);
-		pa(a, b);
-		rra(a);
-		rra(a);
-	}
-	else if ((*a)->next->next->nbr < (*b)->nbr && (*b)->nbr < (*a)->next->next->next->nbr)
+		repeated_moves(a, b);
+	else if ((*a)->next->next->nbr < (*b)->nbr && \
+			(*b)->nbr < (*a)->next->next->next->nbr)
 	{
 		rra(a);
 		pa(a, b);
@@ -85,4 +74,13 @@ void	sort_5(t_list **a, t_list **b)
 	}
 	else
 		pa(a, b);
+}
+
+void	repeated_moves(t_list **a, t_list **b)
+{
+	ra(a);
+	ra(a);
+	pa(a, b);
+	rra(a);
+	rra(a);
 }
