@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:01:02 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 16:28:43 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 20:31:37 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ void	best_friend(t_list **a, t_list **b)
 {
 	t_list	*tmpa;
 	t_list	*tmpb;
-	int		i;
-	int		j;
+	long int	i;
+	long int	j;
 
 	tmpb = *b;
 	while (tmpb)
 	{
 		tmpa = *a;
 		i = 0;
-		j = INT_MAX;
+		j = LLONG_MAX;
 		while (tmpa)
 		{
-			i = tmpa->nbr - (tmpb)->nbr;
+			i = (long long)tmpa->nbr - (long long)(tmpb)->nbr;
 			if (i > 0 && i < j)
 			{
 				(tmpb)->bff_index = tmpa->index;
