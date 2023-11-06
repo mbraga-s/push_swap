@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 20:32:44 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 22:17:38 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void	rot_b(t_list **b, int index);
 void	put_top(t_list **a, t_list **b);
 
 void	final_rot(t_list **a);
+
+void	rot_last(t_list **a, int index);
 
 //moves
 

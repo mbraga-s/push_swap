@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:30:53 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 19:46:39 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 22:17:24 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,48 @@ void	put_top(t_list **a, t_list **b)
 
 void	final_rot(t_list **a)
 {
-	while (!check_sort(a))
-		ra(a);
+	t_list	*tmp;
+	int		min;
+	int		min_index;
+
+	min = 0;
+	add_index(a);
+	tmp = *a;
+	while (tmp)
+	{
+		if(tmp->nbr < min)
+		{
+			min = tmp->nbr;
+			min_index = tmp->index;
+		}
+		tmp = tmp->next;
+	}
+	rot_last(a, min_index);
+}
+
+void	rot_last(t_list **a, int index)
+{
+	int	lsize;
+	int	i;
+	int	j;
+
+	lsize = ft_lstsize(*a) + 1;
+	i = lsize - index;
+	j = index - 1;
+	if (i < j)
+	{
+		while (i > 0)
+		{
+			rra(a);
+			i--;
+		}
+	}
+	else
+	{
+		while (j > 0)
+		{
+			ra(a);
+			j--;
+		}
+	}
 }
