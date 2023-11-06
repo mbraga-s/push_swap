@@ -6,13 +6,13 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:01:02 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 23:15:11 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:28:43 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	proto_sort(t_list **a, t_list **b)
+void	algorithm(t_list **a, t_list **b)
 {
 	while (ft_lstsize(*a) > 5)
 	{
@@ -22,10 +22,15 @@ void	proto_sort(t_list **a, t_list **b)
 			ra(a);
 	}
 	sort_5(a, b);
-	add_index(a);
-	add_index(b);
-	best_friend(a, b);
-	add_cost(*a, *b);
+	while (*b)
+	{
+		add_index(b);
+		add_index(a);
+		best_friend(a, b);
+		add_cost(*a, *b);
+		put_top(a, b);
+	}
+	final_rot(a);
 }
 
 void	best_friend(t_list **a, t_list **b)
@@ -79,4 +84,25 @@ void	add_cost(t_list *a, t_list *b)
 		(b)->cost = amoves + bmoves;
 		(b) = (b)->next;
 	}
+}
+
+int	cost_check(t_list **b)
+{
+	t_list	*tmp;
+	int		tcost;
+	int		tindex;
+
+	tcost = INT_MAX;
+	tindex = 0;
+	tmp = *b;
+	while (tmp)
+	{
+		if (tmp->cost < tcost)
+		{
+			tcost = tmp->cost;
+			tindex = tmp->index;
+		}
+		tmp = tmp->next;
+	}
+	return (tindex);
 }

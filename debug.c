@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 13:22:13 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 22:54:53 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:46:41 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,25 +60,24 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (argc < 2)
+		return (0);
 	if (!parsing(argv, argc))
 	{
-		printf("Correct Input\n");
 		make_list(&stack_a, argc, argv);
-		//print_list(stack_a, stack_b);
+		print_list(stack_a, stack_b);
 		if (check_sort(&stack_a))
 		{
-			printf("List sorted\n");
 			free_list(&stack_a);
 			return (0);
 		}
-		proto_sort(&stack_a, &stack_b);
+		choose_sort(argc, &stack_a, &stack_b);
 		print_list(stack_a, stack_b);
-		print_bff(stack_b);
 		free_list(&stack_a);
 		free_list(&stack_b);
 		return (0);
 	}
 	else
-		printf("Wrong Input\n");
+		printf("Error\n");
 	return (0);
 }

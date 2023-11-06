@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 23:25:25 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:46:52 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,13 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
-//debug
-
-void	print_list(t_list *stack_a, t_list *stack_b);
-
-void	print_bff(t_list *stack_b);
-
 //main
 
 void	make_list(t_list **a, int argc, char **argv);
 
 void	free_list(t_list **lst);
+
+void	choose_sort(int args, t_list **a, t_list **b);
 
 //sorts
 
@@ -56,9 +52,11 @@ void	repeated_moves(t_list **a, t_list **b);
 
 void	best_friend(t_list **a, t_list **b);
 
-void	proto_sort(t_list **a, t_list **b);
+void	algorithm(t_list **a, t_list **b);
 
 void	add_cost(t_list *a, t_list *b);
+
+int		cost_check(t_list **b);
 
 //utils
 
@@ -87,6 +85,16 @@ void	ft_putstr_fd(char *s, int fd);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 void	ft_bzero(void *s, size_t n);
+
+//rot_top
+
+void	rot_a(t_list **a, int bff_index);
+
+void	rot_b(t_list **b, int index);
+
+void	put_top(t_list **a, t_list **b);
+
+void	final_rot(t_list **a);
 
 //moves
 

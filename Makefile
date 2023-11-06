@@ -6,14 +6,13 @@
 #    By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:57:57 by mbraga-s          #+#    #+#              #
-#    Updated: 2023/11/05 16:35:08 by mbraga-s         ###   ########.fr        #
+#    Updated: 2023/11/06 16:46:45 by mbraga-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = parse utils main debug\
-./sort/sorts ./sort/algorithm\
+SRCS = parse utils main ./sort/sorts ./sort/algorithm ./sort/rot_top\
 ./moves/push ./moves/rotate ./moves/rrotate ./moves/swap \
 ./libft/ft_atoi ./libft/ft_bzero ./libft/ft_calloc ./libft/ft_lstadd_back \
 ./libft/ft_lstadd_front ./libft/ft_lstlast ./libft/ft_lstnew ./libft/ft_lstsize \
