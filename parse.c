@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:08:13 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/05 16:53:48 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:06:03 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,10 @@ int	check_number(char **args)
 	while (args[i])
 	{
 		j = 0;
-		if (args[i][0] == '-')
+		if (args[i][0] == '-' && args[i][1])
 			j++;
+		else if (args[i][0] == '-' && !args[i][1])
+			return (1);
 		while (args[i][j])
 		{
 			if (args[i][j] < 48 || args[i][j] > 57)

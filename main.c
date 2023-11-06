@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:13:26 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 16:47:22 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:14:18 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	choose_sort(int args, t_list **a, t_list **b)
 		algorithm(a, b);
 }
 
-int	main(int argc, char **argv)
+/* int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
@@ -75,6 +75,33 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	else
-		printf("Error\n");
+		ft_putstr_fd("Error\n", 2);
+	return (0);
+} */
+
+
+int	main(int argc, char **argv)
+{
+	t_list	*stack_a;
+	t_list	*stack_b;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc < 2)
+		return (0);
+	if (parsing(argv, argc))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
+	make_list(&stack_a, argc, argv);
+	if (check_sort(&stack_a))
+	{
+		free_list(&stack_a);
+		return (0);
+	}
+	choose_sort(argc, &stack_a, &stack_b);
+	free_list(&stack_a);
+	free_list(&stack_b);
 	return (0);
 }
