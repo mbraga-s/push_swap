@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:30:53 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 22:17:24 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/07 00:43:54 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	final_rot(t_list **a)
 	int		min;
 	int		min_index;
 
-	min = 0;
+	min = INT_MAX;
 	add_index(a);
 	tmp = *a;
 	while (tmp)
