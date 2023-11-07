@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 18:01:02 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 20:31:37 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/07 00:01:25 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,4 +105,19 @@ int	cost_check(t_list **b)
 		tmp = tmp->next;
 	}
 	return (tindex);
+}
+
+void	add_index(t_list **lst)
+{
+	t_list	*tmp;
+	int		i;
+
+	tmp = *lst;
+	i = 1;
+	while (tmp)
+	{
+		tmp->index = i;
+		i++;
+		tmp = tmp->next;
+	}
 }

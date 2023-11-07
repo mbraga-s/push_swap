@@ -6,7 +6,7 @@
 /*   By: mbraga-s <mbraga-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:09:23 by mbraga-s          #+#    #+#             */
-/*   Updated: 2023/11/06 22:17:38 by mbraga-s         ###   ########.fr       */
+/*   Updated: 2023/11/07 00:10:32 by mbraga-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	sort_4(t_list **a, t_list **b);
 
 void	sort_5(t_list **a, t_list **b);
 
-void	repeated_moves(t_list **a, t_list **b);
+void	repeat_move(t_list **a);
 
 //algorithm
 
@@ -58,9 +58,9 @@ void	add_cost(t_list *a, t_list *b);
 
 int		cost_check(t_list **b);
 
-//utils
-
 void	add_index(t_list **lst);
+
+//utils
 
 int		average(t_list **a);
 
