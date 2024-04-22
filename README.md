@@ -1,5 +1,7 @@
 # Push_swap
 
+<img src="https://raw.githubusercontent.com/mbraga-s/42-project-badges/main/covers/cover-push_swap.png" alt="Push Swap">
+
 The push_swap project is intended to sort a given list (numerical, non-repeating) using a limited set of instructions in the lowest number of "moves".
 
 To complete this project, students have to implement a sorting algorithm of their choice. The algorithm's efficiency will be defined and evaluated as a measure of the number of actions it takes to sort the list. For my project, I implemented the algorithm detailed in Duarte Morais's GitHub ([*duarte3333*](https://github.com/duarte3333)).
